@@ -6,8 +6,10 @@ import {
 import { composeWithDevTools } from "redux-devtools-extension";
 
 import produceReducer from "./produce";
+import cartReducer from "./cart";
 
 const rootReducer = combineReducers({
+  cart: cartReducer,
   produce: produceReducer,
 });
 

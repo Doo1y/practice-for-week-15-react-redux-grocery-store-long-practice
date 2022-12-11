@@ -8,10 +8,12 @@ import { Provider } from "react-redux";
 
 import store from "./store";
 import { populateProduce } from "./store/produce";
+import { addItem } from "./store/cart";
 
 if (process.env.NODE_ENV !== "production") {
   window.store = store;
   window.populateProduce = populateProduce;
+  window.addItem = addItem;
 }
 
 function Root() {
