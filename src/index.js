@@ -1,19 +1,21 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
-import "./index.css";
-import App from "./App";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import './index.css';
+import App from './App';
 
-import { Provider } from "react-redux";
+import { Provider } from 'react-redux';
 
-import store from "./store";
-import { populateProduce } from "./store/produce";
-import { addItem } from "./store/cart";
+import store from './store';
+import { populateProduce } from './store/produce';
+import { addItem, removeItem, setItemCount } from './store/cart';
 
-if (process.env.NODE_ENV !== "production") {
+if (process.env.NODE_ENV !== 'production') {
   window.store = store;
   window.populateProduce = populateProduce;
   window.addItem = addItem;
+  window.removeItem = removeItem;
+  window.setItemCount = setItemCount;
 }
 
 function Root() {
@@ -30,5 +32,5 @@ ReactDOM.render(
   <React.StrictMode>
     <Root />
   </React.StrictMode>,
-  document.getElementById("root")
+  document.getElementById('root')
 );
